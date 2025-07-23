@@ -220,10 +220,6 @@
             z-index: -1;
         }
 
-        .content-card:hover::before {
-            opacity: 0.3;
-        }
-
         .principle-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -750,57 +746,11 @@
                             <p>Heart tests cost a lot of money and take many days</p>
                         </div>
                     </div>
-                    
-                    <div class="key-takeaway" style="margin-top: 30px;">
-                        <h4 style="color: #10b981; margin-bottom: 15px;">Our Solution</h4>
-                        <p style="font-size: 1.3rem;">We made a computer program that can predict heart disease using simple medical information</p>
-                        <p style="font-size: 1.2rem; margin-top: 10px;">✅ Fast (few seconds)</p>
-                        <p style="font-size: 1.2rem;">✅ Cheap (just need basic tests)</p>
-                        <p style="font-size: 1.2rem;">✅ Easy to use</p>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 3: Dataset Overview with Visualization -->
-        <div class="slide">
-            <h2>Dataset Overview</h2>
-            <div class="content-card">
-                <h3>What Data We Used</h3>
-                <p style="margin-bottom: 30px;">We got medical records from <strong>918 patients</strong></p>
-                
-                <div class="principle-grid">
-                    <div class="principle-card">
-                        <div class="showcase-icon">🧑‍🤝‍🧑</div>
-                        <h4>Basic Information</h4>
-                        <p><strong>Age:</strong> How old they are</p>
-                        <p><strong>Sex:</strong> Male or Female</p>
-                    </div>
-                    <div class="principle-card">
-                        <div class="showcase-icon">💓</div>
-                        <h4>Heart Information</h4>
-                        <p><strong>Blood Pressure:</strong> How hard blood pushes</p>
-                        <p><strong>Heart Rate:</strong> How fast heart beats</p>
-                        <p><strong>Chest Pain:</strong> What type of pain</p>
-                    </div>
-                    <div class="principle-card">
-                        <div class="showcase-icon">🔬</div>
-                        <h4>Test Results</h4>
-                        <p><strong>Cholesterol:</strong> Fat in blood</p>
-                        <p><strong>Blood Sugar:</strong> Sugar level</p>
-                        <p><strong>ECG:</strong> Heart electricity test</p>
-                    </div>
-                </div>
-                
-                <div class="chart-container" style="margin-top: 40px;">
-                    <h4 class="chart-title">Disease Distribution in Dataset</h4>
-                    <canvas id="diseaseDistribution"></canvas>
-                    <div class="chart-fallback">📊 Chart visualization loading...</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 4: Our Solution -->
+        <!-- Slide 3: Our Solution -->
         <div class="slide">
             <h2>Our Solution</h2>
             <div class="content-card">
@@ -840,7 +790,7 @@
                             <div class="principle-card">
                                 <div class="showcase-icon">🎯</div>
                                 <h4>Highly Accurate</h4>
-                                <p>87.3% accuracy - catches 86 out of 100 heart disease cases</p>
+                                <p>88% accuracy - catches 88 out of 100 heart disease cases</p>
                             </div>
                         </div>
                     </div>
@@ -862,6 +812,44 @@
                             <p>Available anywhere, anytime</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Dataset Overview with Visualization -->
+        <div class="slide">
+            <h2>Dataset Overview</h2>
+            <div class="content-card">
+                <h3>What Data We Used</h3>
+                <p style="margin-bottom: 30px;">We got medical records from <strong>918 patients</strong></p>
+                
+                <div class="principle-grid">
+                    <div class="principle-card">
+                        <div class="showcase-icon">🧑‍🤝‍🧑</div>
+                        <h4>Basic Information</h4>
+                        <p><strong>Age:</strong> How old they are</p>
+                        <p><strong>Sex:</strong> Male or Female</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="showcase-icon">💓</div>
+                        <h4>Heart Information</h4>
+                        <p><strong>Blood Pressure:</strong> How hard blood pushes</p>
+                        <p><strong>Heart Rate:</strong> How fast heart beats</p>
+                        <p><strong>Chest Pain:</strong> What type of pain</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="showcase-icon">🔬</div>
+                        <h4>Test Results</h4>
+                        <p><strong>Cholesterol:</strong> Fat in blood</p>
+                        <p><strong>Blood Sugar:</strong> Sugar level</p>
+                        <p><strong>ECG:</strong> Heart electricity test</p>
+                    </div>
+                </div>
+                
+                <div class="chart-container" style="margin-top: 40px;">
+                    <h4 class="chart-title">Disease Distribution in Dataset</h4>
+                    <canvas id="diseaseDistribution"></canvas>
+                    <div class="chart-fallback">📊 Chart visualization loading...</div>
                 </div>
             </div>
         </div>
@@ -901,24 +889,6 @@
                         </ul>
                     </div>
                 </div>
-                
-                <div class="interactive-demo">
-                    <h4 style="color: #818cf8; margin-bottom: 20px;">Try It Yourself!</h4>
-                    <div class="demo-input">
-                        <label>Age:</label>
-                        <input type="number" id="demoAge" value="55" min="20" max="100">
-                    </div>
-                    <div class="demo-input">
-                        <label>Blood Pressure:</label>
-                        <input type="number" id="demoBP" value="140" min="80" max="200">
-                    </div>
-                    <div class="demo-input">
-                        <label>Cholesterol:</label>
-                        <input type="number" id="demoChol" value="250" min="100" max="400">
-                    </div>
-                    <button class="demo-button" onclick="calculateRisk()">Calculate Risk</button>
-                    <div class="demo-result" id="demoResult"></div>
-                </div>
             </div>
         </div>
 
@@ -929,14 +899,54 @@
                 <h3>How Good Is Our Model?</h3>
                 
                 <div style="margin: 40px 0;">
-                    <div class="stat-number" style="font-size: 5rem; color: #43e97b;">87.3%</div>
+                    <div class="stat-number" style="font-size: 5rem; color: #43e97b;">88%</div>
                     <p style="font-size: 1.5rem;">Overall Accuracy</p>
                 </div>
                 
-                <div class="chart-container">
-                    <h4 class="chart-title">Confusion Matrix - Model Performance</h4>
-                    <canvas id="confusionMatrix"></canvas>
-                    <div class="chart-fallback">📊 Chart visualization loading...</div>
+                <div style="margin: 40px 0;">
+                    <h4 style="text-align: center; color: #333; margin-bottom: 30px;">What This Means</h4>
+                    <p style="font-size: 1.3rem; margin-bottom: 30px; text-align: center;">When we test on new patients:</p>
+                    
+                    <div style="display: flex; justify-content: center; margin: 30px 0;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);">
+                            <!-- Header Row -->
+                            <div style="display: grid; grid-template-columns: 180px 180px 180px; grid-template-rows: 90px 90px 90px; gap: 8px; padding: 8px;">
+                                <!-- Headers -->
+                                <div style="background: rgba(102, 126, 234, 0.9); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
+                                    Real →
+                                </div>
+                                <div style="background: rgba(102, 126, 234, 0.9); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
+                                    Healthy
+                                </div>
+                                <div style="background: rgba(102, 126, 234, 0.9); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
+                                    Sick
+                                </div>
+                                
+                                <!-- Row 1: We Said Healthy -->
+                                <div style="background: rgba(102, 126, 234, 0.9); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
+                                    We Said<br>Healthy
+                                </div>
+                                <div style="background: linear-gradient(135deg, #059669, #10b981); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);">
+                                    109✓
+                                </div>
+                                <div style="background: linear-gradient(135deg, #b91c1c, #dc2626); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.8rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(185, 28, 28, 0.3);">
+                                    21✗
+                                </div>
+                                
+                                <!-- Row 2: We Said Sick -->
+                                <div style="background: rgba(102, 126, 234, 0.9); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
+                                    We Said<br>Sick
+                                </div>
+                                <div style="background: linear-gradient(135deg, #b91c1c, #dc2626); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.8rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(185, 28, 28, 0.3);">
+                                    14✗
+                                </div>
+                                <div style="background: linear-gradient(135deg, #059669, #10b981); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);">
+                                    132✓
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="principle-grid" style="margin-top: 40px;">
@@ -1014,27 +1024,23 @@
             
             <h4 style="margin-bottom: 20px;">Steps 1-4: Setup and Data Loading</h4>
             
-            <div class="code-display">
+            <div class="code-display" style="max-width: 800px; margin: 0 auto;">
                 <pre><span class="comment"># Step 1: Import Libraries</span>
 <span class="keyword">import</span> pandas <span class="keyword">as</span> pd
 <span class="keyword">import</span> numpy <span class="keyword">as</span> np
 <span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt
 <span class="keyword">import</span> seaborn <span class="keyword">as</span> sns
-
 <span class="comment"># Step 2: Load the Dataset</span>
 <span class="keyword">import</span> kagglehub
 <span class="keyword">from</span> kagglehub <span class="keyword">import</span> KaggleDatasetAdapter
-
 file_path = <span class="string">"heart.csv"</span>
 data = kagglehub.load_dataset(
     KaggleDatasetAdapter.PANDAS,
     <span class="string">"fedesoriano/heart-failure-prediction"</span>,
     file_path
 )
-
 <span class="comment"># Step 3: Preview the Data</span>
 data.<span class="function">head</span>()
-
 <span class="comment"># Step 4: Basic Information</span>
 data.<span class="function">info</span>()
 data.<span class="function">describe</span>()</pre>
@@ -1048,7 +1054,7 @@ data.<span class="function">describe</span>()</pre>
                 <h3>Step 5: Check for Missing Values</h3>
             </div>
             
-            <div class="code-display" style="height: 200px;">
+            <div class="code-display" style="height: 200px; max-width: 600px; margin: 0 auto;">
                 <pre><span class="comment"># Step 5: Check for Missing Values</span>
 data.<span class="function">isnull</span>().<span class="function">sum</span>()</pre>
             </div>
@@ -1060,6 +1066,61 @@ data.<span class="function">isnull</span>().<span class="function">sum</span>()<
             </div>
         </div>
 
+        <!-- Slide 10: Heart Disease Distribution Histogram -->
+        <div class="slide">
+            <div class="code-header">
+                <span class="hero-icon">📊</span>
+                <h3>Heart Disease Distribution</h3>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px;">
+                <!-- Code Section -->
+                <div class="code-display" style="height: 300px;">
+                    <pre><span class="comment"># Visualize Heart Disease Distribution</span>
+plt.<span class="function">hist</span>(data[<span class="string">'HeartDisease'</span>])
+plt.<span class="function">title</span>(<span class="string">'Heart Disease Distribution'</span>)
+plt.<span class="function">xlabel</span>(<span class="string">'Heart Disease (0=Healthy, 1=Disease)'</span>)
+plt.<span class="function">ylabel</span>(<span class="string">'Number of Patients'</span>)
+plt.<span class="function">show</span>()</pre>
+                </div>
+                
+                <!-- Histogram Visualization -->
+                <div class="content-card" style="padding: 25px; height: 300px;">
+                    <h4 style="color: #43e97b; text-align: center; margin-bottom: 15px;">📈 Histogram Output</h4>
+                    <div class="chart-container" style="margin: 0; padding: 0; height: 220px;">
+                        <canvas id="heartDiseaseHistogram"></canvas>
+                        <div class="chart-fallback">📊 Chart visualization loading...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Chest Pain Type Analysis -->
+        <div class="slide">
+            <div class="code-header">
+                <span class="hero-icon">💓</span>
+                <h3>Chest Pain Type Analysis</h3>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px;">
+                <!-- Code Section -->
+                <div class="code-display" style="height: 300px;">
+                    <pre><span class="comment"># write your code here</span>
+sns.<span class="function">countplot</span>(x=<span class="string">'ChestPainType'</span>, hue=<span class="string">'HeartDisease'</span>, data=data)
+plt.<span class="function">show</span>()</pre>
+                </div>
+                
+                <!-- Chart Visualization -->
+                <div class="content-card" style="padding: 25px; height: 300px;">
+                    <h4 style="color: #43e97b; text-align: center; margin-bottom: 15px;">📊 Count Plot Output</h4>
+                    <div class="chart-container" style="margin: 0; padding: 0; height: 220px;">
+                        <canvas id="chestPainCountPlot"></canvas>
+                        <div class="chart-fallback">� Chart visualization loading...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Steps 7-10: Data Preprocessing & Model Training -->
         <div class="slide">
             <div class="code-header">
@@ -1067,28 +1128,22 @@ data.<span class="function">isnull</span>().<span class="function">sum</span>()<
                 <h3>Steps 7-10: Preprocessing & Training</h3>
             </div>
             
-            <div class="code-display">
+            <div class="code-display" style="max-width: 900px; margin: 0 auto;">
                 <pre><span class="comment"># Step 7: Data Preprocessing and Encoding</span>
 data = pd.<span class="function">get_dummies</span>(data, drop_first=<span class="keyword">True</span>)
 data.<span class="function">head</span>()
-
 <span class="comment"># Step 8: Define Features and Target</span>
 X = data.<span class="function">drop</span>(<span class="string">'HeartDisease'</span>, axis=<span class="number">1</span>)
 y = data[<span class="string">'HeartDisease'</span>]
-
 <span class="comment"># Step 9: Train/Test Split</span>
 <span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split
-
 X_train, X_test, y_train, y_test = <span class="function">train_test_split</span>(
     X, y, test_size=<span class="number">0.3</span>, random_state=<span class="number">42</span>
 )
-
 <span class="comment"># Step 10: Train Logistic Regression Model</span>
 <span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression
-
 model = <span class="function">LogisticRegression</span>(max_iter=<span class="number">10000</span>)
 model.<span class="function">fit</span>(X_train, y_train)
-
 <span class="comment"># Model training complete!</span>
 <span class="comment"># The model has learned patterns from 642 patients</span>
 <span class="comment"># Ready to test on remaining 276 patients</span></pre>
@@ -1102,7 +1157,7 @@ model.<span class="function">fit</span>(X_train, y_train)
                 <h3>Step 11: Make Predictions</h3>
             </div>
             
-            <div class="code-display">
+            <div class="code-display" style="max-width: 900px; margin: 0 auto;">
                 <pre><span class="comment"># Make predictions on the test set</span>
 y_pred = model.<span class="function">predict</span>(X_test)
 data_result = data.loc[X_test.index].<span class="function">copy</span>()
@@ -1120,42 +1175,121 @@ data_result[<span class="string">"Predicted"</span>] = y_pred
                 <h3>Steps 12-13: Model Evaluation</h3>
             </div>
             
-            <div class="code-display">
-                <pre><span class="comment"># Step 12: Evaluate the Model</span>
-<span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> confusion_matrix, accuracy_score, classification_report
+            <div class="code-display" style="height: 40vh; max-width: 1000px; margin: 0 auto;">
+                <pre><span class="comment"># write your code here)</span>
+<span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> accuracy_score, confusion_matrix, classification_report, precision_score, recall_score, f1_score
+<span class="comment"># Evaluate the model</span>
 
 cm = <span class="function">confusion_matrix</span>(y_test, y_pred)
-acc = <span class="function">accuracy_score</span>(y_test, y_pred)
-report = <span class="function">classification_report</span>(y_test, y_pred)
-
 <span class="function">print</span>(<span class="string">'Confusion Matrix:'</span>)
 <span class="function">print</span>(cm)
-<span class="function">print</span>(<span class="string">'\nAccuracy:'</span>, acc)
+<span class="function">print</span>(<span class="string">"\n-----------------\n"</span>)
+<span class="function">print</span>(<span class="string">"Accuracy:"</span>, <span class="function">round</span>(<span class="function">accuracy_score</span>(y_test, y_pred)*<span class="number">100</span>))
+<span class="function">print</span>(<span class="string">"Precision:"</span>, <span class="function">round</span>(<span class="function">precision_score</span>(y_test, y_pred)*<span class="number">100</span>))
+<span class="function">print</span>(<span class="string">"Recall:"</span>, <span class="function">round</span>(<span class="function">recall_score</span>(y_test, y_pred)*<span class="number">100</span>))
+<span class="function">print</span>(<span class="string">"F1 Score:"</span>, <span class="function">round</span>(<span class="function">f1_score</span>(y_test, y_pred)*<span class="number">100</span>))</pre>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px;">
+                <!-- Simple Confusion Matrix -->
+                <div class="content-card" style="padding: 25px;">
+                    <h4 style="color: #818cf8; margin-bottom: 20px; text-align: center;">Confusion Matrix</h4>
+                    <div style="display: flex; justify-content: center;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 16px; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);">
+                            <div style="display: grid; grid-template-columns: 120px 120px; grid-template-rows: 60px 60px; gap: 6px;">
+                                <!-- True Positives (TN) - Healthy predicted correctly -->
+                                <div style="background: linear-gradient(135deg, #10b981, #34d399); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.8rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(16, 185, 129, 0.4);">
+                                    99✓
+                                </div>
+                                <!-- False Positives (FP) - Healthy predicted as sick -->
+                                <div style="background: linear-gradient(135deg, #dc2626, #ef4444); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.3rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(220, 38, 38, 0.4);">
+                                    13✗
+                                </div>
+                                <!-- False Negatives (FN) - Sick predicted as healthy -->
+                                <div style="background: linear-gradient(135deg, #dc2626, #ef4444); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.3rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(220, 38, 38, 0.4);">
+                                    20✗
+                                </div>
+                                <!-- True Negatives (TP) - Sick predicted correctly -->
+                                <div style="background: linear-gradient(135deg, #10b981, #34d399); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.8rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(16, 185, 129, 0.4);">
+                                    144✓
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 15px; color: #a78bfa; font-size: 0.9rem;">
+                        Total Correct: 243/276 (88%)
+                    </div>
+                </div>
+                
+                <!-- Performance Metrics -->
+                <div class="content-card" style="padding: 25px;">
+                    <h4 style="color: #a78bfa; margin-bottom: 20px; text-align: center;">Performance Metrics</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="text-align: center; padding: 20px; background: rgba(67, 233, 123, 0.1); border-radius: 12px; border: 1px solid rgba(67, 233, 123, 0.3);">
+                            <div style="font-size: 2.5rem; font-weight: bold; color: #43e97b;">88%</div>
+                            <div style="color: #e0e7ff; font-size: 1.1rem;">Accuracy</div>
+                        </div>
+                        <div style="text-align: center; padding: 20px; background: rgba(139, 92, 246, 0.1); border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.3);">
+                            <div style="font-size: 2.5rem; font-weight: bold; color: #8b5cf6;">92%</div>
+                            <div style="color: #e0e7ff; font-size: 1.1rem;">Precision</div>
+                        </div>
+                        <div style="text-align: center; padding: 20px; background: rgba(245, 87, 108, 0.1); border-radius: 12px; border: 1px solid rgba(245, 87, 108, 0.3);">
+                            <div style="font-size: 2.5rem; font-weight: bold; color: #f5576c;">88%</div>
+                            <div style="color: #e0e7ff; font-size: 1.1rem;">Recall</div>
+                        </div>
+                        <div style="text-align: center; padding: 20px; background: rgba(79, 172, 254, 0.1); border-radius: 12px; border: 1px solid rgba(79, 172, 254, 0.3);">
+                            <div style="font-size: 2.5rem; font-weight: bold; color: #4facfe;">90%</div>
+                            <div style="color: #e0e7ff; font-size: 1.1rem;">F1 Score</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<span class="comment"># Output:</span>
-<span class="comment"># Confusion Matrix:</span>
-<span class="comment"># [[109  14]</span>
-<span class="comment">#  [ 21 132]]</span>
-<span class="comment"># Accuracy: 0.8732...</span>
-
-<span class="comment"># Step 13: Confusion Matrix Heatmap</span>
-sns.<span class="function">heatmap</span>(cm, annot=<span class="keyword">True</span>, fmt=<span class="string">'d'</span>, cmap=<span class="string">'Reds'</span>)
-plt.<span class="function">xlabel</span>(<span class="string">'Predicted'</span>)
-plt.<span class="function">ylabel</span>(<span class="string">'Actual'</span>)
-plt.<span class="function">title</span>(<span class="string">'Confusion Matrix Heatmap'</span>)
-plt.<span class="function">show</span>()
-
-<span class="comment"># Classification Report:</span>
-<span class="function">print</span>(report)
-
-<span class="comment"># Performance Summary:</span>
-<span class="comment"># - True Positives (correctly identified sick): 132</span>
-<span class="comment"># - True Negatives (correctly identified healthy): 109</span>
-<span class="comment"># - False Positives (healthy classified as sick): 14</span>
-<span class="comment"># - False Negatives (sick classified as healthy): 21</span>
-
-<span class="comment"># Thank You! 🙏</span>
-<span class="comment"># Any Questions?</span></pre>
+        <!-- Final Slide: Thank You -->
+        <div class="slide">
+            <div class="hero-icon" style="font-size: 3rem; margin-bottom: 15px;">🎓</div>
+            <h1 style="font-size: 2.8rem; margin-bottom: 15px;">Thank You!</h1>
+            <div class="content-card" style="max-width: 1000px; width: 90%; padding: 25px; margin: 0 auto;">
+                <h3 class="gradient-text" style="font-size: 1.8rem; margin-bottom: 10px;">Project Team</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 25px;">Hearty AI - Heart Disease Prediction System</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin: 20px 0;">
+                    <div class="principle-card" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(139, 92, 246, 0.05)); padding: 15px; text-align: center;">
+                        <div class="showcase-icon" style="font-size: 1.8rem; margin-bottom: 8px;">👨🏻‍💻</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 3px;">Khalid Aldawish</h4>
+                    </div>
+                    <div class="principle-card" style="background: linear-gradient(135deg, rgba(118, 75, 162, 0.15), rgba(102, 126, 234, 0.05)); padding: 15px; text-align: center;">
+                        <div class="showcase-icon" style="font-size: 1.8rem; margin-bottom: 8px;">👨🏻‍💻</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 3px;">Abdulrahman Alhussainy</h4>
+                    </div>
+                    <div class="principle-card" style="background: linear-gradient(135deg, rgba(240, 147, 251, 0.15), rgba(118, 75, 162, 0.05)); padding: 15px; text-align: center;">
+                        <div class="showcase-icon" style="font-size: 1.8rem; margin-bottom: 8px;">👨🏻‍💻</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 3px;">Fahad Alghamdi</h4>
+                    </div>
+                    <div class="principle-card" style="background: linear-gradient(135deg, rgba(245, 87, 108, 0.15), rgba(240, 147, 251, 0.05)); padding: 15px; text-align: center;">
+                        <div class="showcase-icon" style="font-size: 1.8rem; margin-bottom: 8px;">👨🏻‍💻</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 3px;">Thamer Almalki</h4>
+                    </div>
+                    <div class="principle-card" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.15), rgba(245, 87, 108, 0.05)); padding: 15px; text-align: center;">
+                        <div class="showcase-icon" style="font-size: 1.8rem; margin-bottom: 8px;">👨🏻‍💻</div>
+                        <h4 style="font-size: 1rem; margin-bottom: 3px;">Faisal Alamery</h4>
+                    </div>
+                </div>
+                
+                <div class="key-takeaway" style="margin-top: 25px; padding: 20px;">
+                    <h4 style="color: #10b981; margin-bottom: 15px; text-align: center; font-size: 1.2rem;">💚 Making Healthcare Smarter with AI</h4>
+                    <div style="text-align: center;">
+                        <div style="display: flex; justify-content: center; gap: 25px; align-items: center; margin: 15px 0;">
+                            <span style="font-size: 2.5rem;">❤️</span>
+                            <span style="font-size: 2.5rem;">🤖</span>
+                            <span style="font-size: 2.5rem;">🏥</span>
+                        </div>
+                        <p style="margin: 0; font-size: 1.1rem; color: #e0e7ff;">
+                            Thank you for your attention!
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1165,7 +1299,7 @@ plt.<span class="function">show</span>()
     <div class="navigation">
         <button class="nav-button" onclick="prevSlide()">◀</button>
         <div class="slide-indicator">
-            <span id="current">1</span> / <span id="total">15</span>
+            <span id="current">1</span> / <span id="total">16</span>
         </div>
         <button class="nav-button" onclick="nextSlide()">▶</button>
     </div>
@@ -1458,6 +1592,179 @@ plt.<span class="function">show</span>()
                             legend: {
                                 labels: {
                                     color: '#e0e7ff'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Heart Disease Histogram Chart
+            const histogramCtx = document.getElementById('heartDiseaseHistogram');
+            if (histogramCtx) {
+                // Destroy existing chart if it exists
+                if (charts.histogram) {
+                    charts.histogram.destroy();
+                }
+                
+                const ctx = histogramCtx.getContext('2d');
+                charts.histogram = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Healthy (0)', 'Heart Disease (1)'],
+                        datasets: [{
+                            label: 'Number of Patients',
+                            data: [410, 508],
+                            backgroundColor: [
+                                'rgba(67, 233, 123, 0.8)',
+                                'rgba(245, 87, 108, 0.8)'
+                            ],
+                            borderColor: [
+                                'rgba(67, 233, 123, 1)',
+                                'rgba(245, 87, 108, 1)'
+                            ],
+                            borderWidth: 2,
+                            borderRadius: 8,
+                            borderSkipped: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const total = 918;
+                                        const percentage = ((context.parsed.y / total) * 100).toFixed(1);
+                                        return context.parsed.y + ' patients (' + percentage + '%)';
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: {
+                                    color: '#e0e7ff',
+                                    font: {
+                                        size: 12,
+                                        weight: 'bold'
+                                    }
+                                },
+                                grid: {
+                                    display: false
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    color: '#e0e7ff',
+                                    stepSize: 100
+                                },
+                                grid: {
+                                    color: 'rgba(139, 92, 246, 0.2)'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Chest Pain Count Plot Chart
+            const chestPainCtx = document.getElementById('chestPainCountPlot');
+            if (chestPainCtx) {
+                // Destroy existing chart if it exists
+                if (charts.chestPain) {
+                    charts.chestPain.destroy();
+                }
+                
+                const ctx = chestPainCtx.getContext('2d');
+                charts.chestPain = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['ATA', 'NAP', 'ASY', 'TA'],
+                        datasets: [
+                            {
+                                label: 'Healthy (0)',
+                                data: [150, 130, 105, 25],
+                                backgroundColor: 'rgba(67, 233, 123, 0.8)',
+                                borderColor: 'rgba(67, 233, 123, 1)',
+                                borderWidth: 2
+                            },
+                            {
+                                label: 'Heart Disease (1)',
+                                data: [23, 70, 390, 20],
+                                backgroundColor: 'rgba(245, 87, 108, 0.8)',
+                                borderColor: 'rgba(245, 87, 108, 1)',
+                                borderWidth: 2
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    color: '#e0e7ff',
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const label = context.dataset.label || '';
+                                        return label + ': ' + context.parsed.y + ' patients';
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: {
+                                    color: '#e0e7ff',
+                                    font: {
+                                        size: 11,
+                                        weight: 'bold'
+                                    }
+                                },
+                                grid: {
+                                    display: false
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'ChestPainType',
+                                    color: '#e0e7ff',
+                                    font: {
+                                        size: 12,
+                                        weight: 'bold'
+                                    }
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                max: 400,
+                                ticks: {
+                                    color: '#e0e7ff',
+                                    stepSize: 100
+                                },
+                                grid: {
+                                    color: 'rgba(139, 92, 246, 0.2)'
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'count',
+                                    color: '#e0e7ff',
+                                    font: {
+                                        size: 12,
+                                        weight: 'bold'
+                                    }
                                 }
                             }
                         }
