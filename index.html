@@ -76,6 +76,17 @@
             padding: 20px 0;
         }
 
+        /* Hide scrollbar but keep functionality */
+        .slide::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .slide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         .slide.active {
             display: block;
         }
@@ -213,24 +224,22 @@
             font-size: 0.9rem;
             line-height: 1.8;
             border: 1px solid rgba(139, 92, 246, 0.2);
-            max-height: 500px;
+            max-height: 400px;
             overflow-y: auto;
             max-width: 1000px;
             position: relative;
             user-select: text;
         }
 
+        /* Hide scrollbar for code display */
         .code-display::-webkit-scrollbar {
-            width: 8px;
+            width: 0px;
+            background: transparent;
         }
 
-        .code-display::-webkit-scrollbar-track {
-            background: rgba(139, 92, 246, 0.1);
-        }
-
-        .code-display::-webkit-scrollbar-thumb {
-            background: rgba(139, 92, 246, 0.3);
-            border-radius: 4px;
+        .code-display {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
         .code-display pre {
@@ -253,6 +262,24 @@
 
         .code-display .number {
             color: #bd93f9;
+        }
+
+        .code-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .code-header h3 {
+            margin: 0;
+            font-size: 1.6rem;
+        }
+
+        .code-header .hero-icon {
+            font-size: 2rem;
+            margin: 0;
         }
 
         .workflow-step {
@@ -368,6 +395,204 @@
         .matrix-cell.wrong {
             background: rgba(243, 93, 108, 0.3);
             font-size: 1.4rem;
+        }
+
+        /* Proper visualization styles */
+        .histogram-container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .histogram {
+            position: relative;
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            border-left: 2px solid #333;
+            border-bottom: 2px solid #333;
+            padding: 20px;
+        }
+
+        .hist-bar {
+            background: #667eea;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: all 0.3s ease;
+            min-width: 80px;
+            margin: 0 10px;
+        }
+
+        .hist-bar:hover {
+            background: #764ba2;
+            transform: translateY(-5px);
+        }
+
+        .hist-bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .hist-bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .axis-label {
+            position: absolute;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .x-axis-label {
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .y-axis-label {
+            left: -80px;
+            top: 50%;
+            transform: rotate(-90deg);
+        }
+
+        .countplot-container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 20px auto;
+            max-width: 900px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .countplot {
+            position: relative;
+            height: 350px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            border-left: 2px solid #333;
+            border-bottom: 2px solid #333;
+            padding: 20px;
+        }
+
+        .count-group {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        .count-bar {
+            width: 40px;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .count-bar.no-disease {
+            background: #43e97b;
+        }
+
+        .count-bar.disease {
+            background: #f5576c;
+        }
+
+        .count-bar:hover {
+            transform: translateY(-5px);
+            filter: brightness(1.1);
+        }
+
+        .count-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #333;
+        }
+
+        .legend-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .heatmap-container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 20px auto;
+            max-width: 700px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .heatmap {
+            display: grid;
+            grid-template-columns: 80px repeat(2, 150px);
+            grid-template-rows: 80px repeat(2, 100px);
+            gap: 2px;
+            background: #333;
+            padding: 2px;
+        }
+
+        .heatmap-cell {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .heatmap-cell.header {
+            background: #e0e0e0;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .heatmap-cell.value {
+            color: #fff;
+        }
+
+        .heatmap-cell.high {
+            background: #d32f2f;
+        }
+
+        .heatmap-cell.medium {
+            background: #f57c00;
+        }
+
+        .heatmap-cell.low {
+            background: #ffb74d;
         }
 
         .navigation {
@@ -720,102 +945,354 @@
             </div>
         </div>
 
-        <!-- Slide 7: Code Demo -->
+        <!-- Code Demo Slides Start Here -->
+        <!-- Steps 1-4: Import, Load, Preview, Basic Info -->
         <div class="slide">
-            <div class="hero-icon">💻</div>
-            <h3>Our Code Implementation</h3>
+            <div class="code-header">
+                <span class="hero-icon">💻</span>
+                <h3>Our Code Implementation</h3>
+            </div>
             
-            <div class="code-display" id="codeDisplay">
-                <pre><span class="comment"># Heart Disease Prediction - Team Solution</span>
-
-<span class="comment"># Step 1: Import Libraries</span>
+            <div class="content-card">
+                <h4>Steps 1-4: Setup and Data Loading</h4>
+                
+                <div class="code-display">
+                    <pre><span class="comment"># Step 1: Import Libraries</span>
 <span class="function">import</span> pandas as pd
 <span class="function">import</span> numpy as np
 <span class="function">import</span> matplotlib.pyplot as plt
 <span class="function">import</span> seaborn as sns
-<span class="function">from</span> sklearn.model_selection <span class="function">import</span> train_test_split
-<span class="function">from</span> sklearn.linear_model <span class="function">import</span> LogisticRegression
-<span class="function">from</span> sklearn.metrics <span class="function">import</span> confusion_matrix, accuracy_score, classification_report
 
-<span class="comment"># Step 2: Load Data</span>
-data = pd.read_csv(<span class="string">'heart.csv'</span>)
-print(<span class="string">f"Dataset loaded: {data.shape}"</span>)
+<span class="comment"># Step 2: Load the Dataset</span>
+<span class="function">import</span> kagglehub
+<span class="function">from</span> kagglehub <span class="function">import</span> KaggleDatasetAdapter
 
-<span class="comment"># Step 3: Check for missing values</span>
-print(data.isnull().sum())
+file_path = <span class="string">"heart.csv"</span>
+data = kagglehub.load_dataset(
+    KaggleDatasetAdapter.PANDAS,
+    <span class="string">"fedesoriano/heart-failure-prediction"</span>,
+    file_path
+)
 
-<span class="comment"># Step 4: Data Exploration</span>
+<span class="comment"># Step 3: Preview the Data</span>
+data.head()
+
+<span class="comment"># Step 4: Basic Information</span>
+data.info()
+data.describe()</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Check Missing Values -->
+        <div class="slide">
+            <div class="code-header">
+                <span class="hero-icon">🔍</span>
+                <h3>Step 5: Check for Missing Values</h3>
+            </div>
+            
+            <div class="content-card">
+                <div class="code-display">
+                    <pre><span class="comment"># Step 5: Check for Missing Values</span>
+data.isnull().sum()</pre>
+                </div>
+                
+                <div style="background: rgba(46, 204, 113, 0.1); padding: 20px; border-radius: 16px; margin-top: 20px;">
+                    <p><strong>Result: No missing values found!</strong></p>
+                    <p>All 918 patients have complete data</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: EDA - HeartDisease Distribution -->
+        <div class="slide">
+            <div class="code-header">
+                <span class="hero-icon">📊</span>
+                <h3>Step 6: Data Exploration - Heart Disease</h3>
+            </div>
+            
+            <div class="content-card">
+                <div class="code-display">
+                    <pre><span class="comment"># What does the distribution of HeartDisease (0 vs 1) look like?</span>
 plt.hist(data[<span class="string">'HeartDisease'</span>])
-plt.title(<span class="string">'Heart Disease Distribution'</span>)
+plt.show()</pre>
+                </div>
+                
+                <div class="histogram-container">
+                    <h5 style="text-align: center; color: #333; margin-bottom: 20px;">Heart Disease Distribution</h5>
+                    <div class="histogram">
+                        <div class="hist-bar" style="height: 180px;">
+                            <div class="hist-bar-value">410</div>
+                            <div class="hist-bar-label">0 (No)</div>
+                        </div>
+                        <div class="hist-bar" style="height: 220px;">
+                            <div class="hist-bar-value">508</div>
+                            <div class="hist-bar-label">1 (Yes)</div>
+                        </div>
+                        <div class="x-axis-label">Heart Disease</div>
+                        <div class="y-axis-label">Count</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Age & Cholesterol Histograms -->
+        <div class="slide">
+            <div class="code-header">
+                <span class="hero-icon">📊</span>
+                <h3>Step 6: Age and Cholesterol Distributions</h3>
+            </div>
+            
+            <div class="content-card">
+                <div class="code-display">
+                    <pre><span class="comment"># How does Age vary between people with and without Heart Disease?</span>
+plt.hist(data[<span class="string">'Age'</span>])
 plt.show()
 
-<span class="comment"># Visualize Chest Pain vs Heart Disease</span>
+<span class="comment"># What is the distribution of cholesterol values in the dataset?</span>
+plt.hist(data[<span class="string">'Cholesterol'</span>])
+plt.show()</pre>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="histogram-container" style="padding: 20px;">
+                        <h5 style="text-align: center; color: #333; margin-bottom: 10px;">Age Distribution</h5>
+                        <div class="histogram" style="height: 200px;">
+                            <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; height: 150px; background: linear-gradient(to top, #667eea, #764ba2); border-radius: 8px; opacity: 0.8;">
+                                <div style="text-align: center; color: white; padding-top: 60px;">
+                                    <p>Range: 28-77 years</p>
+                                    <p>Average: 53.5 years</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="histogram-container" style="padding: 20px;">
+                        <h5 style="text-align: center; color: #333; margin-bottom: 10px;">Cholesterol Distribution</h5>
+                        <div class="histogram" style="height: 200px;">
+                            <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; height: 150px; background: linear-gradient(to top, #667eea, #764ba2); border-radius: 8px; opacity: 0.8;">
+                                <div style="text-align: center; color: white; padding-top: 60px;">
+                                    <p>Range: 0-603 mg/dl</p>
+                                    <p>Average: 198.8 mg/dl</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Chest Pain Type Analysis -->
+        <div class="slide">
+            <div class="code-header">
+                <span class="hero-icon">📊</span>
+                <h3>Step 6: Chest Pain Type vs Heart Disease</h3>
+            </div>
+            
+            <div class="content-card">
+                <div class="code-display">
+                    <pre><span class="comment"># Is there a relationship between Chest Pain Type and Heart Disease?</span>
 sns.countplot(x=<span class="string">'ChestPainType'</span>, hue=<span class="string">'HeartDisease'</span>, data=data)
-plt.title(<span class="string">'Chest Pain Type by Heart Disease'</span>)
-plt.show()
+plt.show()</pre>
+                </div>
+                
+                <div class="countplot-container">
+                    <h5 style="text-align: center; color: #333; margin-bottom: 20px;">Chest Pain Type by Heart Disease Status</h5>
+                    <div class="countplot">
+                        <div class="count-group">
+                            <div class="count-bar no-disease" style="height: 50px;"></div>
+                            <div class="count-bar disease" style="height: 200px;"></div>
+                            <div class="count-label">ASY</div>
+                        </div>
+                        <div class="count-group">
+                            <div class="count-bar no-disease" style="height: 150px;"></div>
+                            <div class="count-bar disease" style="height: 60px;"></div>
+                            <div class="count-label">ATA</div>
+                        </div>
+                        <div class="count-group">
+                            <div class="count-bar no-disease" style="height: 160px;"></div>
+                            <div class="count-bar disease" style="height: 40px;"></div>
+                            <div class="count-label">NAP</div>
+                        </div>
+                        <div class="count-group">
+                            <div class="count-bar no-disease" style="height: 80px;"></div>
+                            <div class="count-bar disease" style="height: 30px;"></div>
+                            <div class="count-label">TA</div>
+                        </div>
+                        <div class="x-axis-label">Chest Pain Type</div>
+                        <div class="y-axis-label">Count</div>
+                    </div>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-box" style="background: #43e97b;"></div>
+                            <span>No Disease (0)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-box" style="background: #f5576c;"></div>
+                            <span>Has Disease (1)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<span class="comment"># Step 5: Preprocessing - Convert categories to numbers</span>
-data_encoded = pd.get_dummies(data, drop_first=<span class="number">True</span>)
-print(<span class="string">f"After encoding: {data_encoded.shape}"</span>)
+        <!-- Steps 7-10: Data Preprocessing & Model Training -->
+        <div class="slide">
+            <div class="code-header">
+                <span class="hero-icon">🔧</span>
+                <h3>Steps 7-10: Preprocessing & Training</h3>
+            </div>
+            
+            <div class="content-card">
+                <div class="code-display">
+                    <pre><span class="comment"># Step 7: Data Preprocessing and Encoding</span>
+data = pd.get_dummies(data, drop_first=<span class="number">True</span>)
+data.head()
 
-<span class="comment"># Step 6: Split features and target</span>
-X = data_encoded.drop(<span class="string">'HeartDisease'</span>, axis=<span class="number">1</span>)
-y = data_encoded[<span class="string">'HeartDisease'</span>]
+<span class="comment"># Step 8: Define Features and Target</span>
+X = data.drop(<span class="string">'HeartDisease'</span>, axis=<span class="number">1</span>)
+y = data[<span class="string">'HeartDisease'</span>]
 
-<span class="comment"># Step 7: Train/Test Split (70/30)</span>
+<span class="comment"># Step 9: Train/Test Split</span>
+<span class="function">from</span> sklearn.model_selection <span class="function">import</span> train_test_split
+
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=<span class="number">0.3</span>, random_state=<span class="number">42</span>
 )
 
-<span class="comment"># Step 8: Train Logistic Regression</span>
+<span class="comment"># Step 10: Train Logistic Regression Model</span>
+<span class="function">from</span> sklearn.linear_model <span class="function">import</span> LogisticRegression
+
 model = LogisticRegression(max_iter=<span class="number">10000</span>)
-model.fit(X_train, y_train)
+model.fit(X_train, y_train)</pre>
+                </div>
+            </div>
+        </div>
 
-<span class="comment"># Step 9: Make Predictions</span>
+        <!-- Step 11: Make Predictions -->
+        <div class="slide">
+            <div class="code-header">
+                <span class="hero-icon">🎯</span>
+                <h3>Step 11: Make Predictions</h3>
+            </div>
+            
+            <div class="content-card">
+                <div class="code-display">
+                    <pre><span class="comment"># Make predictions on the test set</span>
 y_pred = model.predict(X_test)
-
-<span class="comment"># Show first 15 predictions vs actual</span>
-print(<span class="string">'------Predictions----'</span>)
+print(<span class="string">'------التوقع----'</span>)
 print(y_pred[:<span class="number">15</span>])
-print(<span class="string">'------Actual-----'</span>)
+print(<span class="string">'------الاختبار-----'</span>)
 print(y_test[:<span class="number">15</span>].values)
 
-<span class="comment"># Step 10: Create results dataframe</span>
+<span class="comment"># Create results dataframe</span>
+<span class="function">from</span> IPython.display <span class="function">import</span> display
 data_result = data.loc[X_test.index].copy()
 data_result[<span class="string">"Predicted"</span>] = y_pred
 data_result[<span class="string">"Actual"</span>] = y_test.values
+display(data_result.head(<span class="number">10</span>))
 
 <span class="comment"># Count errors and correct predictions</span>
 errors = (data_result[<span class="string">"Predicted"</span>] != data_result[<span class="string">"Actual"</span>]).sum()
+print(<span class="string">"عدد الأخطاء:"</span>, errors)
+
 correct = (data_result[<span class="string">"Predicted"</span>] == data_result[<span class="string">"Actual"</span>]).sum()
+print(<span class="string">"عدد التوقعات الصحيحة:"</span>, correct)
+
 accuracy = correct / len(data_result)
+print(<span class="string">"الدقة:"</span>, round(accuracy * <span class="number">100</span>, <span class="number">2</span>), <span class="string">"%"</span>)</pre>
+                </div>
+            </div>
+        </div>
 
-print(<span class="string">f"Errors: {errors}"</span>)
-print(<span class="string">f"Correct: {correct}"</span>)
-print(<span class="string">f"Accuracy: {accuracy * 100:.2f}%"</span>)
+        <!-- Steps 12-13: Evaluation & Confusion Matrix -->
+        <div class="slide">
+            <div class="code-header">
+                <span class="hero-icon">📈</span>
+                <h3>Steps 12-13: Model Evaluation</h3>
+            </div>
+            
+            <div class="content-card">
+                <div class="code-display">
+                    <pre><span class="comment"># Step 12: Evaluate the Model</span>
+<span class="function">from</span> sklearn.metrics <span class="function">import</span> confusion_matrix, accuracy_score, classification_report
 
-<span class="comment"># Step 11: Detailed Evaluation</span>
 cm = confusion_matrix(y_test, y_pred)
+acc = accuracy_score(y_test, y_pred)
+report = classification_report(y_test, y_pred)
+
 print(<span class="string">'Confusion Matrix:'</span>)
 print(cm)
+print(<span class="string">'\nAccuracy:'</span>, acc)
 
-<span class="comment"># Step 12: Visualize Confusion Matrix</span>
+<span class="comment"># Step 13: Confusion Matrix Heatmap</span>
 sns.heatmap(cm, annot=<span class="number">True</span>, fmt=<span class="string">'d'</span>, cmap=<span class="string">'Reds'</span>)
 plt.xlabel(<span class="string">'Predicted'</span>)
 plt.ylabel(<span class="string">'Actual'</span>)
 plt.title(<span class="string">'Confusion Matrix Heatmap'</span>)
-plt.show()
+plt.show()</pre>
+                </div>
+                
+                <div class="heatmap-container">
+                    <h5 style="text-align: center; color: #333; margin-bottom: 20px;">Confusion Matrix Heatmap</h5>
+                    <div class="heatmap">
+                        <div class="heatmap-cell header"></div>
+                        <div class="heatmap-cell header">Predicted: 0</div>
+                        <div class="heatmap-cell header">Predicted: 1</div>
+                        <div class="heatmap-cell header">Actual: 0</div>
+                        <div class="heatmap-cell value high">109</div>
+                        <div class="heatmap-cell value low">14</div>
+                        <div class="heatmap-cell header">Actual: 1</div>
+                        <div class="heatmap-cell value medium">21</div>
+                        <div class="heatmap-cell value high">132</div>
+                    </div>
+                    <p style="text-align: center; color: #333; margin-top: 20px;">Red = High values (good for diagonal)</p>
+                </div>
+            </div>
+        </div>
 
-<span class="comment"># Extra: Try Decision Tree for comparison</span>
+        <!-- Extra: Decision Tree Comparison -->
+        <div class="slide">
+            <div class="code-header">
+                <span class="hero-icon">🌳</span>
+                <h3>Extra: Decision Tree Comparison</h3>
+            </div>
+            
+            <div class="content-card">
+                <div class="code-display">
+                    <pre><span class="comment"># Extra: Decision Tree Classifier</span>
 <span class="function">from</span> sklearn.tree <span class="function">import</span> DecisionTreeClassifier
 
+<span class="comment"># Initialize and train the Decision Tree model</span>
 dt_model = DecisionTreeClassifier(random_state=<span class="number">42</span>)
 dt_model.fit(X_train, y_train)
-y_pred_dt = dt_model.predict(X_test)
-acc_dt = accuracy_score(y_test, y_pred_dt)
 
-print(<span class="string">f'\nDecision Tree Accuracy: {acc_dt * 100:.2f}%'</span>)
-print(<span class="string">'Logistic Regression is better!'</span>)</pre>
+<span class="comment"># Make predictions</span>
+y_pred_dt = dt_model.predict(X_test)
+
+<span class="comment"># Evaluate the model</span>
+cm_dt = confusion_matrix(y_test, y_pred_dt)
+acc_dt = accuracy_score(y_test, y_pred_dt)
+report_dt = classification_report(y_test, y_pred_dt)
+
+print(<span class="string">'Decision Tree Confusion Matrix:'</span>)
+print(cm_dt)
+print(<span class="string">'\nDecision Tree Accuracy:'</span>, acc_dt)
+
+<span class="comment"># Visualize the Decision Tree confusion matrix</span>
+sns.heatmap(cm_dt, annot=<span class="number">True</span>, fmt=<span class="string">'d'</span>, cmap=<span class="string">'Blues'</span>)
+plt.xlabel(<span class="string">'Predicted'</span>)
+plt.ylabel(<span class="string">'Actual'</span>)
+plt.title(<span class="string">'Decision Tree Confusion Matrix Heatmap'</span>)
+plt.show()</pre>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <h4>Model Comparison</h4>
+                    <p><strong>Logistic Regression:</strong> 87.32% accuracy ✅</p>
+                    <p><strong>Decision Tree:</strong> 80.07% accuracy</p>
+                    <h3 style="margin-top: 30px;">Thank You! 🙏</h3>
+                    <p style="font-size: 1.4rem;">Any Questions?</p>
+                </div>
             </div>
         </div>
 
@@ -825,7 +1302,7 @@ print(<span class="string">'Logistic Regression is better!'</span>)</pre>
     <div class="navigation">
         <button class="nav-button" onclick="prevSlide()">◀</button>
         <div class="slide-indicator">
-            <span id="current">1</span> / <span id="total">7</span>
+            <span id="current">1</span> / <span id="total">16</span>
         </div>
         <button class="nav-button" onclick="nextSlide()">▶</button>
     </div>
@@ -848,7 +1325,7 @@ print(<span class="string">'Logistic Regression is better!'</span>)</pre>
             updateProgress();
             
             // Add fade-in animation to elements
-            const elements = slides[index].querySelectorAll('h1, h2, h3, p, .principle-card, .workflow-step, .stat-card');
+            const elements = slides[index].querySelectorAll('h1, h2, h3, p, .principle-card, .workflow-step, .stat-card, .histogram-container, .countplot-container, .heatmap-container');
             elements.forEach((el, i) => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
@@ -876,6 +1353,9 @@ print(<span class="string">'Logistic Regression is better!'</span>)</pre>
         
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
+            const activeSlide = slides[currentSlide];
+            const scrollableElements = activeSlide.querySelectorAll('.code-display, .slide');
+            
             if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'g') {
                 e.preventDefault();
                 nextSlide();
@@ -890,16 +1370,18 @@ print(<span class="string">'Logistic Regression is better!'</span>)</pre>
                 e.preventDefault();
                 currentSlide = totalSlides - 1;
                 showSlide(currentSlide);
-            } else if (currentSlide === totalSlides - 1) {
-                // Code scrolling for last slide
-                const codeDisplay = document.getElementById('codeDisplay');
-                if (e.key === 'ArrowDown' || e.key === 'j') {
-                    e.preventDefault();
-                    codeDisplay.scrollTop += 50;
-                } else if (e.key === 'ArrowUp' || e.key === 'h') {
-                    e.preventDefault();
-                    codeDisplay.scrollTop -= 50;
-                }
+            } else if (e.key === 'ArrowDown' || e.key === 'j') {
+                e.preventDefault();
+                // Scroll code displays or slide
+                scrollableElements.forEach(el => {
+                    el.scrollTop += 50;
+                });
+            } else if (e.key === 'ArrowUp' || e.key === 'h') {
+                e.preventDefault();
+                // Scroll code displays or slide
+                scrollableElements.forEach(el => {
+                    el.scrollTop -= 50;
+                });
             }
         });
         
