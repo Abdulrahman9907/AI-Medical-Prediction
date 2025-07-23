@@ -220,6 +220,10 @@
             z-index: -1;
         }
 
+        .content-card:hover::before {
+            opacity: 0.3;
+        }
+
         .principle-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -889,6 +893,24 @@
                         </ul>
                     </div>
                 </div>
+                
+                <div class="interactive-demo">
+                    <h4 style="color: #818cf8; margin-bottom: 20px;">Try It Yourself!</h4>
+                    <div class="demo-input">
+                        <label>Age:</label>
+                        <input type="number" id="demoAge" value="55" min="20" max="100">
+                    </div>
+                    <div class="demo-input">
+                        <label>Blood Pressure:</label>
+                        <input type="number" id="demoBP" value="140" min="80" max="200">
+                    </div>
+                    <div class="demo-input">
+                        <label>Cholesterol:</label>
+                        <input type="number" id="demoChol" value="250" min="100" max="400">
+                    </div>
+                    <button class="demo-button" onclick="calculateRisk()">Calculate Risk</button>
+                    <div class="demo-result" id="demoResult"></div>
+                </div>
             </div>
         </div>
 
@@ -926,10 +948,10 @@
                                 <div style="background: rgba(102, 126, 234, 0.9); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
                                     We Said<br>Healthy
                                 </div>
-                                <div style="background: linear-gradient(135deg, #059669, #10b981); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);">
+                                <div style="background: linear-gradient(135deg, #10b981, #34d399); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);">
                                     109✓
                                 </div>
-                                <div style="background: linear-gradient(135deg, #b91c1c, #dc2626); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.8rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(185, 28, 28, 0.3);">
+                                <div style="background: linear-gradient(135deg, #dc2626, #ef4444); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.8rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);">
                                     21✗
                                 </div>
                                 
@@ -937,10 +959,10 @@
                                 <div style="background: rgba(102, 126, 234, 0.9); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
                                     We Said<br>Sick
                                 </div>
-                                <div style="background: linear-gradient(135deg, #b91c1c, #dc2626); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.8rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(185, 28, 28, 0.3);">
+                                <div style="background: linear-gradient(135deg, #dc2626, #ef4444); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.8rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);">
                                     14✗
                                 </div>
-                                <div style="background: linear-gradient(135deg, #059669, #10b981); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);">
+                                <div style="background: linear-gradient(135deg, #10b981, #34d399); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);">
                                     132✓
                                 </div>
                             </div>
@@ -1246,60 +1268,13 @@ cm = <span class="function">confusion_matrix</span>(y_test, y_pred)
             </div>
         </div>
 
-        <!-- Final Slide: Thank You -->
-        <div class="slide">
-            <div class="hero-icon" style="font-size: 3rem; margin-bottom: 15px;">🎓</div>
-            <h1 style="font-size: 2.8rem; margin-bottom: 15px;">Thank You!</h1>
-            <div class="content-card" style="max-width: 1000px; width: 90%; padding: 25px; margin: 0 auto;">
-                <h3 class="gradient-text" style="font-size: 1.8rem; margin-bottom: 10px;">Project Team</h3>
-                <p style="font-size: 1.2rem; margin-bottom: 25px;">Hearty AI - Heart Disease Prediction System</p>
-                
-                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin: 20px 0;">
-                    <div class="principle-card" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(139, 92, 246, 0.05)); padding: 15px; text-align: center;">
-                        <div class="showcase-icon" style="font-size: 1.8rem; margin-bottom: 8px;">👨🏻‍💻</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 3px;">Khalid Aldawish</h4>
-                    </div>
-                    <div class="principle-card" style="background: linear-gradient(135deg, rgba(118, 75, 162, 0.15), rgba(102, 126, 234, 0.05)); padding: 15px; text-align: center;">
-                        <div class="showcase-icon" style="font-size: 1.8rem; margin-bottom: 8px;">👨🏻‍💻</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 3px;">Abdulrahman Alhussainy</h4>
-                    </div>
-                    <div class="principle-card" style="background: linear-gradient(135deg, rgba(240, 147, 251, 0.15), rgba(118, 75, 162, 0.05)); padding: 15px; text-align: center;">
-                        <div class="showcase-icon" style="font-size: 1.8rem; margin-bottom: 8px;">👨🏻‍💻</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 3px;">Fahad Alghamdi</h4>
-                    </div>
-                    <div class="principle-card" style="background: linear-gradient(135deg, rgba(245, 87, 108, 0.15), rgba(240, 147, 251, 0.05)); padding: 15px; text-align: center;">
-                        <div class="showcase-icon" style="font-size: 1.8rem; margin-bottom: 8px;">👨🏻‍💻</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 3px;">Thamer Almalki</h4>
-                    </div>
-                    <div class="principle-card" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.15), rgba(245, 87, 108, 0.05)); padding: 15px; text-align: center;">
-                        <div class="showcase-icon" style="font-size: 1.8rem; margin-bottom: 8px;">👨🏻‍💻</div>
-                        <h4 style="font-size: 1rem; margin-bottom: 3px;">Faisal Alamery</h4>
-                    </div>
-                </div>
-                
-                <div class="key-takeaway" style="margin-top: 25px; padding: 20px;">
-                    <h4 style="color: #10b981; margin-bottom: 15px; text-align: center; font-size: 1.2rem;">💚 Making Healthcare Smarter with AI</h4>
-                    <div style="text-align: center;">
-                        <div style="display: flex; justify-content: center; gap: 25px; align-items: center; margin: 15px 0;">
-                            <span style="font-size: 2.5rem;">❤️</span>
-                            <span style="font-size: 2.5rem;">🤖</span>
-                            <span style="font-size: 2.5rem;">🏥</span>
-                        </div>
-                        <p style="margin: 0; font-size: 1.1rem; color: #e0e7ff;">
-                            Thank you for your attention!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <!-- Navigation -->
     <div class="navigation">
         <button class="nav-button" onclick="prevSlide()">◀</button>
         <div class="slide-indicator">
-            <span id="current">1</span> / <span id="total">16</span>
+            <span id="current">1</span> / <span id="total">15</span>
         </div>
         <button class="nav-button" onclick="nextSlide()">▶</button>
     </div>
