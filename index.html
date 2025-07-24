@@ -1277,16 +1277,37 @@ cm = <span class="function">confusion_matrix</span>(y_test, y_pred)
                     </div>
                 </div>
                 
-                <div class="key-takeaway" style="margin-top: 25px; padding: 20px;">
-                    <h4 style="color: #10b981; margin-bottom: 15px; text-align: center; font-size: 1.2rem;">💚 Making Healthcare Smarter with AI</h4>
-                    <div style="text-align: center;">
-                        <div style="display: flex; justify-content: center; gap: 25px; align-items: center; margin: 15px 0;">
-                            <span style="font-size: 2.5rem;">❤️</span>
-                            <span style="font-size: 2.5rem;">🤖</span>
-                            <span style="font-size: 2.5rem;">🏥</span>
+                <!-- Split layout for Making Healthcare Smarter with AI and QR Code -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 25px; align-items: center;">
+                    <!-- Left side: Text content -->
+                    <div class="key-takeaway" style="margin: 0; padding: 20px;">
+                        <h4 style="color: #10b981; margin-bottom: 15px; text-align: center; font-size: 1.2rem;">💚 Making Healthcare Smarter with AI</h4>
+                        <div style="text-align: center;">
+                            <div style="display: flex; justify-content: center; gap: 25px; align-items: center; margin: 15px 0;">
+                                <span style="font-size: 2.5rem;">❤️</span>
+                                <span style="font-size: 2.5rem;">🤖</span>
+                                <span style="font-size: 2.5rem;">🏥</span>
+                            </div>
+                            <p style="margin: 0; font-size: 1.1rem; color: #e0e7ff;">
+                                Thank you for your attention!
+                            </p>
                         </div>
-                        <p style="margin: 0; font-size: 1.1rem; color: #e0e7ff;">
-                            Thank you for your attention!
+                    </div>
+                    
+                    <!-- Right side: QR Code -->
+                    <div style="text-align: center; padding: 20px;">
+                        <h4 style="color: #818cf8; margin-bottom: 20px; font-size: 1.2rem;">📱 Try Our Interactive Calculator</h4>
+                        <div style="background: white; padding: 15px; border-radius: 15px; display: inline-block; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://heart-disease-predictor-sgqc.vercel.app/" 
+                                 alt="QR Code for Heart Disease Predictor" 
+                                 style="display: block; width: 180px; height: 180px;" />
+                        </div>
+                        <p style="margin-top: 15px; font-size: 0.9rem; color: #a78bfa;">
+                            Scan to test our AI model<br>
+                            with your own data
+                        </p>
+                        <p style="margin-top: 10px; font-size: 0.8rem; color: #6b7280; word-break: break-all;">
+                            heart-disease-predictor-sgqc.vercel.app
                         </p>
                     </div>
                 </div>
